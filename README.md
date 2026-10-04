@@ -1,53 +1,62 @@
 # Pi Themes
 
-A Pi package that ships theme JSON files and adds `/themes` for switching the current session's theme.
-
-## Try locally
+> A curated theme pack for [Pi](https://github.com/earendil-works/pi): **68 terminal themes**, a fast `/themes` picker, and zero setup beyond one install.
 
 ```sh
-pi --extension ./extensions/index.ts
+pi install npm:@anishthite/pi-themes
 ```
 
-Run `/themes` to open the picker or `/themes <name>` to select one directly. `/settings` persists the choice for future sessions.
+Then start Pi and run `/themes` to browse, or select one directly:
 
-## OpenCode collection
+```text
+/themes opencode-tokyonight-dark
+```
 
-This package ports all 33 OpenCode bundled TUI themes from [`anomalyco/opencode`](https://github.com/anomalyco/opencode) commit `907b3bc` (the source is MIT licensed). Each source palette becomes `opencode-<name>-dark` and `opencode-<name>-light`, for 66 Pi themes.
+Your pick changes the current session. Use Pi’s `/settings` command to make it your default.
+
+## What's inside
+
+| Collection | Themes | Highlights |
+| --- | ---: | --- |
+| OpenCode | 66 | Every bundled OpenCode TUI palette, in dark and light variants |
+| Whip | 2 | Neon City Dark and Seti |
+
+### Start here
+
+| Mood | Theme |
+| --- | --- |
+| Familiar and calm | `opencode-github-dark` |
+| Purple after-hours | `opencode-tokyonight-dark` |
+| Warm and low-contrast | `opencode-everforest-dark` |
+| High-energy neon | `whip-neon-city-dark` |
+| Crisp and classic | `whip-seti` |
+
+Every OpenCode theme uses the name `opencode-<name>-<dark|light>`. For instance, pair `opencode-github-light/opencode-github-dark` in Pi’s Theme setting to follow your terminal appearance automatically.
+
+<details>
+<summary>Browse the OpenCode collection</summary>
 
 `aura`, `ayu`, `carbonfox`, `catppuccin`, `catppuccin-frappe`, `catppuccin-macchiato`, `cobalt2`, `cursor`, `dracula`, `everforest`, `flexoki`, `github`, `gruvbox`, `kanagawa`, `lucent-orng`, `material`, `matrix`, `mercury`, `monokai`, `nightowl`, `nord`, `one-dark`, `opencode`, `orng`, `osaka-jade`, `palenight`, `rosepine`, `solarized`, `synthwave84`, `tokyonight`, `vercel`, `vesper`, `zenburn`.
+</details>
 
-Pi has no dedicated diff-background roles, so those OpenCode colors map to the nearest Pi semantic roles.
+## Local development
 
-## Whip collection
+Try the package without installing it:
 
-This package also ports `whip-neon-city-dark` and `whip-seti` from [Whip PR #285](https://github.com/context-labs/whip/pull/285) at `e76b337`. The source is Apache-2.0 licensed.
-
-## Add a theme
-
-Put `<name>.json` in `themes/`. Its `name` must match its filename and conform to Pi's theme schema:
-
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
-  "name": "my-theme",
-  "colors": {}
-}
+```sh
+pi --extension ./extensions/index.ts --theme ./themes --use-theme whip-seti
 ```
 
-Validate the complete palette against Pi's schema before adding it. Pi discovers package themes automatically.
+Add custom palettes as `themes/<name>.json`; the JSON `name` must match its filename and validate against [Pi’s theme schema](https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json).
 
 ## Release
-
-Run the local Bun release script. It publishes to npm, creates and pushes `v<version>`, then creates GitHub release notes.
 
 ```sh
 bun run release
 ```
 
-Preview it first with `bun run release -- --dry-run`. Bump the version in `package.json` before the next release.
+The local Bun script publishes to npm, creates and pushes `v<version>`, and generates GitHub release notes. Preview it with `bun run release -- --dry-run`; bump `package.json` first.
 
-## Install
+## Credits
 
-```sh
-pi install npm:@anishthite/pi-themes
-```
+OpenCode palettes come from [`anomalyco/opencode`](https://github.com/anomalyco/opencode) at `907b3bc` (MIT). Neon City Dark and Seti come from [Whip PR #285](https://github.com/context-labs/whip/pull/285) at `e76b337` (Apache-2.0). See [`NOTICE`](NOTICE) for details.
