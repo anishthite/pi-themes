@@ -1,6 +1,7 @@
 const dryRun = process.argv.includes("--dry-run");
-const version = (await Bun.file("package.json").json()).version;
+const { name, version } = await Bun.file("package.json").json();
 const tag = `v${version}`;
+const registryUrl = `https://registry.npmjs.org/${encodeURIComponent(name)}/${version}`;
 
 function run(command: string[]) {
 	console.log(`$ ${command.join(" ")}`);
@@ -17,7 +18,14 @@ if (dryRun) {
 	process.exit(0);
 }
 
-run(["bun", "publish", "--access", "public"]);
+if (!(await fetch(registryUrl)).ok) {
+	run(["bun", "publish", "--access", "public"]);
+	for (let attempt = 0; attempt < 5 && !(await fetch(registryUrl)).ok; attempt++) {
+		await Bun.sleep(2_000);
+	}
+	if (!(await fetch(registryUrl)).ok) throw new Error(`${name}@${version} was not published`);
+}
+
 run(["git", "tag", "-a", tag, "-m", tag]);
 run(["git", "push", "origin", "HEAD"]);
 run(["git", "push", "origin", tag]);
