@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implementation Notes — Index</title>
+<style>
+  body { font: 14px/1.5 -apple-system, system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; position: sticky; top: 0; }
+  tr.superseded td { text-decoration: line-through; color: #888; }
+  .blast-high { color: #b00020; font-weight: 600; } .blast-med { color: #b85c00; } .blast-low { color: #2a7a2a; }
+  .status-in-progress { color: #b85c00; } .status-shipped { color: #2a7a2a; } .status-blocked { color: #b00020; }
+  a { color: #1a5fb4; text-decoration: none; } a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Implementation Notes — Index</h1>
+<p>One row per task, newest first. Never delete — superseded rows get strikethrough and a <code>[superseded by …]</code> note.</p>
+<table>
+  <thead><tr><th>Date</th><th>Task</th><th>Status</th><th>Blast</th><th>Tags</th><th>Summary</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>2026-10-04</td>
+      <td><a href="2026-10-04-trusted-publishing.html">Configure trusted publishing</a></td>
+      <td class="status-in-progress">in-progress</td>
+      <td class="blast-med">medium</td>
+      <td>npm, github-actions, release</td>
+      <td>Tag-only GitHub OIDC publisher; npm trust relationship awaits configuration.</td>
+    </tr>
+    <tr>
+      <td>2026-10-03</td>
+      <td><a href="2026-10-03-port-whip-themes.html">Port Whip themes</a></td>
+      <td>ready-for-review</td>
+      <td class="blast-low">low</td>
+      <td>pi, themes, whip</td>
+      <td>Convert Neon City Dark and Seti from Whip PR #285.</td>
+    </tr>
+    <tr>
+      <td>2026-10-03</td>
+      <td><a href="2026-10-03-port-opencode-themes.html">Port OpenCode themes</a></td>
+      <td>ready-for-review</td>
+      <td class="blast-low">low</td>
+      <td>pi, themes, opencode</td>
+      <td>Convert all bundled OpenCode TUI palettes into Pi dark and light themes.</td>
+    </tr>
+    <tr>
+      <td>2026-10-03</td>
+      <td><a href="2026-10-03-theme-package-scaffold.html">Scaffold Pi theme package</a></td>
+      <td class="status-in-progress">ready-for-review</td>
+      <td class="blast-low">low</td>
+      <td>pi, themes, extension</td>
+      <td>Native <code>/themes</code> picker; leaves persistence to <code>/settings</code>.</td>
+    </tr>
+    <!-- <tr>
+      <td>2026-05-18</td>
+      <td><a href="2026-05-18-stripe-webhook.html">Add Stripe webhook</a></td>
+      <td class="status-in-progress">in-progress</td>
+      <td class="blast-med">medium</td>
+      <td>billing, stripe</td>
+      <td>Idempotent handler; rejected polling (T-001); 1 open Q on retry window.</td>
+    </tr> -->
+  </tbody>
+</table>
+</body>
+</html>

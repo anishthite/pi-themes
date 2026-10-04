@@ -1,0 +1,6 @@
+# Third-party theme sources
+
+- OpenCode bundled TUI themes: `anomalyco/opencode` at `907b3bc`, MIT License.
+- Neon City Dark and Seti: `context-labs/whip` PR #285 at `e76b337`, Apache License 2.0.
+
+The porting code and package scaffolding are MIT licensed. Source-theme licenses continue to apply to their respective palettes.

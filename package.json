@@ -1,0 +1,19 @@
+{
+  "name": "@anishthite/pi-themes",
+  "version": "0.1.1",
+  "license": "MIT",
+  "description": "Theme picker and theme collection for Pi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anishthite/pi-themes.git"
+  },
+  "keywords": ["pi-package", "pi", "themes"],
+  "files": ["README.md", "NOTICE", "LICENSE", "extensions", "themes"],
+  "pi": {
+    "extensions": ["./extensions/index.ts"],
+    "themes": ["./themes/*.json"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
