@@ -36,15 +36,16 @@ Put `<name>.json` in `themes/`. Its `name` must match its filename and conform t
 
 Validate the complete palette against Pi's schema before adding it. Pi discovers package themes automatically.
 
-## Publish manually
+## Release
 
-The current unpublished release is `0.1.1`:
+Push a version tag to publish to npm and create GitHub release notes:
 
 ```sh
-npm run publish:manual
+npm version patch
+git push --follow-tags
 ```
 
-For later releases, run `npm version patch` first. Authenticate with npm first; pass an npm 2FA code with `npm publish --access public --otp=<code>` when required.
+The workflow uses npm trusted publishing; enable direct `npm publish` for its `release.yml` trusted-publisher entry in npm package settings.
 
 ## Install
 

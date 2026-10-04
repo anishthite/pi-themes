@@ -1,6 +1,6 @@
 {
   "name": "@anishthite/pi-themes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Theme picker and theme collection for Pi",
   "repository": {
@@ -9,9 +9,6 @@
   },
   "keywords": ["pi-package", "pi", "themes"],
   "files": ["README.md", "NOTICE", "LICENSE", "extensions", "themes"],
-  "scripts": {
-    "publish:manual": "npm publish --access public"
-  },
   "pi": {
     "extensions": ["./extensions/index.ts"],
     "themes": ["./themes/*.json"]
