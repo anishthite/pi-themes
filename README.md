@@ -36,10 +36,18 @@ Put `<name>.json` in `themes/`. Its `name` must match its filename and conform t
 
 Validate the complete palette against Pi's schema before adding it. Pi discovers package themes automatically.
 
-## Package later
+## Publish manually
 
-Remove `private`, choose a publishable npm name, then install with:
+The current unpublished release is `0.1.1`:
 
 ```sh
-pi install npm:<package-name>
+npm run publish:manual
+```
+
+For later releases, run `npm version patch` first. Authenticate with npm first; pass an npm 2FA code with `npm publish --access public --otp=<code>` when required.
+
+## Install
+
+```sh
+pi install npm:@anishthite/pi-themes
 ```
