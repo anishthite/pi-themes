@@ -38,14 +38,13 @@ Validate the complete palette against Pi's schema before adding it. Pi discovers
 
 ## Release
 
-Push a version tag to publish to npm and create GitHub release notes:
+Run the local Bun release script. It publishes to npm, creates and pushes `v<version>`, then creates GitHub release notes.
 
 ```sh
-npm version patch
-git push --follow-tags
+bun run release
 ```
 
-The workflow uses npm trusted publishing; enable direct `npm publish` for its `release.yml` trusted-publisher entry in npm package settings.
+Preview it first with `bun run release -- --dry-run`. Bump the version in `package.json` before the next release.
 
 ## Install
 

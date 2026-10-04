@@ -9,6 +9,9 @@
   },
   "keywords": ["pi-package", "pi", "themes"],
   "files": ["README.md", "NOTICE", "LICENSE", "extensions", "themes"],
+  "scripts": {
+    "release": "bun run scripts/release.ts"
+  },
   "pi": {
     "extensions": ["./extensions/index.ts"],
     "themes": ["./themes/*.json"]
