@@ -20,7 +20,7 @@ if (dryRun) {
 
 if (!(await fetch(registryUrl)).ok) {
 	run(["bun", "publish", "--access", "public"]);
-	for (let attempt = 0; attempt < 5 && !(await fetch(registryUrl)).ok; attempt++) {
+	for (let attempt = 0; attempt < 30 && !(await fetch(registryUrl)).ok; attempt++) {
 		await Bun.sleep(2_000);
 	}
 	if (!(await fetch(registryUrl)).ok) throw new Error(`${name}@${version} was not published`);
