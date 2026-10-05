@@ -32,7 +32,7 @@ github-light/github-dark
 
 ## Theme catalog
 
-### OpenCode — 66 themes
+### 66 paired themes
 
 Each name below is available in **both** `-dark` and `-light` forms. For example, `dracula-dark` and `dracula-light`.
 
@@ -50,11 +50,7 @@ Each name below is available in **both** `-dark` and `-light` forms. For example
 | `solarized` | `synthwave84` | `tokyonight` |
 | `vercel` | `vesper` | `zenburn` |
 
-### Whip — 2 themes
+### Two more themes
 
 - `neon-city-dark`
 - `seti`
-
-## Credits
-
-OpenCode palettes: [`anomalyco/opencode`](https://github.com/anomalyco/opencode) (MIT). Neon City Dark and Seti: [Whip PR #285](https://github.com/context-labs/whip/pull/285) (Apache-2.0). See [`NOTICE`](NOTICE) for details.
