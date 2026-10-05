@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
-	"name": "opencode-light",
+	"name": "default-light",
 	"colors": {
 		"accent": "#3b7dd8",
 		"border": "#b8b8b8",

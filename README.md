@@ -45,7 +45,7 @@ Each name below is available in **both** `-dark` and `-light` forms. For example
 | `gruvbox` | `kanagawa` | `lucent-orng` |
 | `material` | `matrix` | `mercury` |
 | `monokai` | `nightowl` | `nord` |
-| `one-dark` | `opencode` | `orng` |
+| `one-dark` | `default` | `orng` |
 | `osaka-jade` | `palenight` | `rosepine` |
 | `solarized` | `synthwave84` | `tokyonight` |
 | `vercel` | `vesper` | `zenburn` |
