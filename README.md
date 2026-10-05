@@ -1,62 +1,70 @@
 # Pi Themes
 
-> A curated theme pack for [Pi](https://github.com/earendil-works/pi): **68 terminal themes**, a fast `/themes` picker, and zero setup beyond one install.
+**68 themes for [Pi](https://github.com/earendil-works/pi), with a built-in picker.**
+
+## Install
 
 ```sh
 pi install npm:@anishthite/pi-themes
 ```
 
-Then start Pi and run `/themes` to browse, or select one directly:
+Restart Pi, then run:
+
+```text
+/themes
+```
+
+Pick a theme with the arrow keys, or set one directly:
 
 ```text
 /themes opencode-tokyonight-dark
 ```
 
-Your pick changes the current session. Use Pi’s `/settings` command to make it your default.
+## Save your choice
 
-## What's inside
+`/themes` changes the current session. To use a theme every time, open `/settings` in Pi and set **Theme** to its name.
 
-| Collection | Themes | Highlights |
-| --- | ---: | --- |
-| OpenCode | 66 | Every bundled OpenCode TUI palette, in dark and light variants |
-| Whip | 2 | Neon City Dark and Seti |
+To follow your terminal’s light/dark appearance, set Theme to a pair:
 
-### Start here
+```text
+opencode-github-light/opencode-github-dark
+```
 
-| Mood | Theme |
+## Popular picks
+
+| If you want… | Try… |
 | --- | --- |
-| Familiar and calm | `opencode-github-dark` |
-| Purple after-hours | `opencode-tokyonight-dark` |
-| Warm and low-contrast | `opencode-everforest-dark` |
-| High-energy neon | `whip-neon-city-dark` |
-| Crisp and classic | `whip-seti` |
+| A clean, familiar palette | `opencode-github-dark` |
+| Purple night mode | `opencode-tokyonight-dark` |
+| Warm, easy-on-the-eyes colors | `opencode-everforest-dark` |
+| Maximum neon | `whip-neon-city-dark` |
+| Classic Seti syntax colors | `whip-seti` |
 
-Every OpenCode theme uses the name `opencode-<name>-<dark|light>`. For instance, pair `opencode-github-light/opencode-github-dark` in Pi’s Theme setting to follow your terminal appearance automatically.
+## Theme catalog
 
-<details>
-<summary>Browse the OpenCode collection</summary>
+### OpenCode — 66 themes
 
-`aura`, `ayu`, `carbonfox`, `catppuccin`, `catppuccin-frappe`, `catppuccin-macchiato`, `cobalt2`, `cursor`, `dracula`, `everforest`, `flexoki`, `github`, `gruvbox`, `kanagawa`, `lucent-orng`, `material`, `matrix`, `mercury`, `monokai`, `nightowl`, `nord`, `one-dark`, `opencode`, `orng`, `osaka-jade`, `palenight`, `rosepine`, `solarized`, `synthwave84`, `tokyonight`, `vercel`, `vesper`, `zenburn`.
-</details>
+Each name below is available in **both** `-dark` and `-light` forms. For example, `opencode-dracula-dark` and `opencode-dracula-light`.
 
-## Local development
+|  |  |  |
+| --- | --- | --- |
+| `opencode-aura` | `opencode-ayu` | `opencode-carbonfox` |
+| `opencode-catppuccin` | `opencode-catppuccin-frappe` | `opencode-catppuccin-macchiato` |
+| `opencode-cobalt2` | `opencode-cursor` | `opencode-dracula` |
+| `opencode-everforest` | `opencode-flexoki` | `opencode-github` |
+| `opencode-gruvbox` | `opencode-kanagawa` | `opencode-lucent-orng` |
+| `opencode-material` | `opencode-matrix` | `opencode-mercury` |
+| `opencode-monokai` | `opencode-nightowl` | `opencode-nord` |
+| `opencode-one-dark` | `opencode-opencode` | `opencode-orng` |
+| `opencode-osaka-jade` | `opencode-palenight` | `opencode-rosepine` |
+| `opencode-solarized` | `opencode-synthwave84` | `opencode-tokyonight` |
+| `opencode-vercel` | `opencode-vesper` | `opencode-zenburn` |
 
-Try the package without installing it:
+### Whip — 2 themes
 
-```sh
-pi --extension ./extensions/index.ts --theme ./themes --use-theme whip-seti
-```
-
-Add custom palettes as `themes/<name>.json`; the JSON `name` must match its filename and validate against [Pi’s theme schema](https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json).
-
-## Release
-
-```sh
-bun run release
-```
-
-The local Bun script publishes to npm, creates and pushes `v<version>`, and generates GitHub release notes. Preview it with `bun run release -- --dry-run`; bump `package.json` first.
+- `whip-neon-city-dark`
+- `whip-seti`
 
 ## Credits
 
-OpenCode palettes come from [`anomalyco/opencode`](https://github.com/anomalyco/opencode) at `907b3bc` (MIT). Neon City Dark and Seti come from [Whip PR #285](https://github.com/context-labs/whip/pull/285) at `e76b337` (Apache-2.0). See [`NOTICE`](NOTICE) for details.
+OpenCode palettes: [`anomalyco/opencode`](https://github.com/anomalyco/opencode) (MIT). Neon City Dark and Seti: [Whip PR #285](https://github.com/context-labs/whip/pull/285) (Apache-2.0). See [`NOTICE`](NOTICE) for details.
