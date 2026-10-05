@@ -8,13 +8,15 @@
 pi install npm:@anishthite/pi-themes
 ```
 
+[Request a theme](https://github.com/anishthite/pi-themes/issues/new?template=theme-request.md&title=Theme+request%3A+) if your favorite is missing.
+
 Restart Pi, then run:
 
 ```text
 /themes
 ```
 
-Pick a theme with the arrow keys, or set one directly:
+Arrow through the list to preview each palette live; press Enter to keep it or Escape to restore your current theme. You can also set one directly:
 
 ```text
 /themes tokyonight-dark

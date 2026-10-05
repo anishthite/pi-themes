@@ -4,19 +4,31 @@ import { SelectList, type SelectItem } from "@earendil-works/pi-tui";
 async function pickTheme(ctx: ExtensionCommandContext, items: SelectItem[]): Promise<string | undefined> {
 	if (ctx.mode !== "tui") return ctx.hasUI ? ctx.ui.select("Choose a theme", items.map((item) => item.label)) : undefined;
 
-	return ctx.ui.custom<string | undefined>((tui, theme, _keybindings, done) => {
+	const originalTheme = ctx.ui.theme;
+	const currentIndex = Math.max(0, items.findIndex((item) => item.value === originalTheme.name));
+	const preview = (name: string) => {
+		const theme = ctx.ui.getTheme(name);
+		if (theme) ctx.ui.setTheme(theme);
+	};
+	const choice = await ctx.ui.custom<string | undefined>((tui, _theme, _keybindings, done) => {
 		const list = new SelectList(items, 12, {
-			selectedPrefix: (text) => theme.fg("accent", text),
-			selectedText: (text) => theme.fg("accent", text),
-			description: (text) => theme.fg("muted", text),
-			scrollInfo: (text) => theme.fg("dim", text),
-			noMatch: (text) => theme.fg("warning", text),
+			selectedPrefix: (text) => ctx.ui.theme.fg("accent", text),
+			selectedText: (text) => ctx.ui.theme.fg("accent", text),
+			description: (text) => ctx.ui.theme.fg("muted", text),
+			scrollInfo: (text) => ctx.ui.theme.fg("dim", text),
+			noMatch: (text) => ctx.ui.theme.fg("warning", text),
 		});
+		list.setSelectedIndex(currentIndex);
+		list.onSelectionChange = (item) => preview(item.value);
 		list.onSelect = (item) => done(item.value);
 		list.onCancel = () => done(undefined);
 
 		return {
-			render: (width) => list.render(width),
+			render: (width) => [
+				ctx.ui.theme.fg("accent", ctx.ui.theme.bold("Preview theme")),
+				...list.render(width),
+				ctx.ui.theme.fg("dim", "↑↓ preview · enter select · esc keep current theme"),
+			],
 			invalidate: () => list.invalidate(),
 			handleInput: (data) => {
 				list.handleInput(data);
@@ -24,6 +36,9 @@ async function pickTheme(ctx: ExtensionCommandContext, items: SelectItem[]): Pro
 			},
 		};
 	});
+
+	if (!choice) ctx.ui.setTheme(originalTheme);
+	return choice;
 }
 
 export default function themePicker(pi: ExtensionAPI) {
