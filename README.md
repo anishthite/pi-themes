@@ -17,7 +17,7 @@ Restart Pi, then run:
 Pick a theme with the arrow keys, or set one directly:
 
 ```text
-/themes opencode-tokyonight-dark
+/themes tokyonight-dark
 ```
 
 ## Save your choice
@@ -27,43 +27,43 @@ Pick a theme with the arrow keys, or set one directly:
 To follow your terminal’s light/dark appearance, set Theme to a pair:
 
 ```text
-opencode-github-light/opencode-github-dark
+github-light/github-dark
 ```
 
 ## Popular picks
 
 | If you want… | Try… |
 | --- | --- |
-| A clean, familiar palette | `opencode-github-dark` |
-| Purple night mode | `opencode-tokyonight-dark` |
-| Warm, easy-on-the-eyes colors | `opencode-everforest-dark` |
-| Maximum neon | `whip-neon-city-dark` |
-| Classic Seti syntax colors | `whip-seti` |
+| A clean, familiar palette | `github-dark` |
+| Purple night mode | `tokyonight-dark` |
+| Warm, easy-on-the-eyes colors | `everforest-dark` |
+| Maximum neon | `neon-city-dark` |
+| Classic Seti syntax colors | `seti` |
 
 ## Theme catalog
 
 ### OpenCode — 66 themes
 
-Each name below is available in **both** `-dark` and `-light` forms. For example, `opencode-dracula-dark` and `opencode-dracula-light`.
+Each name below is available in **both** `-dark` and `-light` forms. For example, `dracula-dark` and `dracula-light`.
 
 |  |  |  |
 | --- | --- | --- |
-| `opencode-aura` | `opencode-ayu` | `opencode-carbonfox` |
-| `opencode-catppuccin` | `opencode-catppuccin-frappe` | `opencode-catppuccin-macchiato` |
-| `opencode-cobalt2` | `opencode-cursor` | `opencode-dracula` |
-| `opencode-everforest` | `opencode-flexoki` | `opencode-github` |
-| `opencode-gruvbox` | `opencode-kanagawa` | `opencode-lucent-orng` |
-| `opencode-material` | `opencode-matrix` | `opencode-mercury` |
-| `opencode-monokai` | `opencode-nightowl` | `opencode-nord` |
-| `opencode-one-dark` | `opencode-opencode` | `opencode-orng` |
-| `opencode-osaka-jade` | `opencode-palenight` | `opencode-rosepine` |
-| `opencode-solarized` | `opencode-synthwave84` | `opencode-tokyonight` |
-| `opencode-vercel` | `opencode-vesper` | `opencode-zenburn` |
+| `aura` | `ayu` | `carbonfox` |
+| `catppuccin` | `catppuccin-frappe` | `catppuccin-macchiato` |
+| `cobalt2` | `cursor` | `dracula` |
+| `everforest` | `flexoki` | `github` |
+| `gruvbox` | `kanagawa` | `lucent-orng` |
+| `material` | `matrix` | `mercury` |
+| `monokai` | `nightowl` | `nord` |
+| `one-dark` | `opencode` | `orng` |
+| `osaka-jade` | `palenight` | `rosepine` |
+| `solarized` | `synthwave84` | `tokyonight` |
+| `vercel` | `vesper` | `zenburn` |
 
 ### Whip — 2 themes
 
-- `whip-neon-city-dark`
-- `whip-seti`
+- `neon-city-dark`
+- `seti`
 
 ## Credits
 
