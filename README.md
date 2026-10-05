@@ -30,16 +30,6 @@ To follow your terminal’s light/dark appearance, set Theme to a pair:
 github-light/github-dark
 ```
 
-## Popular picks
-
-| If you want… | Try… |
-| --- | --- |
-| A clean, familiar palette | `github-dark` |
-| Purple night mode | `tokyonight-dark` |
-| Warm, easy-on-the-eyes colors | `everforest-dark` |
-| Maximum neon | `neon-city-dark` |
-| Classic Seti syntax colors | `seti` |
-
 ## Theme catalog
 
 ### OpenCode — 66 themes
