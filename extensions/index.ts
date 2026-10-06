@@ -6,9 +6,9 @@ async function pickTheme(ctx: ExtensionCommandContext, items: SelectItem[]): Pro
 
 	const originalTheme = ctx.ui.theme;
 	const currentIndex = Math.max(0, items.findIndex((item) => item.value === originalTheme.name));
+	let previewTheme = originalTheme;
 	const preview = (name: string) => {
-		const theme = ctx.ui.getTheme(name);
-		if (theme) ctx.ui.setTheme(theme);
+		previewTheme = ctx.ui.getTheme(name) ?? originalTheme;
 	};
 	const choice = await ctx.ui.custom<string | undefined>((tui, _theme, _keybindings, done) => {
 		const list = new SelectList(items, 12, {
@@ -25,9 +25,18 @@ async function pickTheme(ctx: ExtensionCommandContext, items: SelectItem[]): Pro
 
 		return {
 			render: (width) => [
-				ctx.ui.theme.fg("accent", ctx.ui.theme.bold("Preview theme")),
+				ctx.ui.theme.fg("accent", ctx.ui.theme.bold("Choose a theme")),
 				...list.render(width),
-				ctx.ui.theme.fg("dim", "↑↓ preview · enter select · esc keep current theme"),
+				previewTheme.fg("accent", previewTheme.bold(`Preview: ${previewTheme.name ?? "system"}`)),
+				previewTheme.style("  Aa  ", { fg: "text", bg: "selectedBg" }) +
+					" " +
+					previewTheme.fg("success", "success") +
+					" " +
+					previewTheme.fg("warning", "warning") +
+					" " +
+					previewTheme.fg("error", "error"),
+				previewTheme.fg("mdHeading", "# Heading") + "  " + previewTheme.fg("mdCode", "inline code"),
+				ctx.ui.theme.fg("dim", "↑↓ preview · enter select · esc cancel"),
 			],
 			invalidate: () => list.invalidate(),
 			handleInput: (data) => {
@@ -37,7 +46,6 @@ async function pickTheme(ctx: ExtensionCommandContext, items: SelectItem[]): Pro
 		};
 	});
 
-	if (!choice) ctx.ui.setTheme(originalTheme);
 	return choice;
 }
 
