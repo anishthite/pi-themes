@@ -16,10 +16,23 @@ Restart Pi, then run:
 /themes
 ```
 
-Arrow through the list to preview each palette live; press Enter to keep it or Escape to restore your current theme. You can also set one directly:
+`/themes` always opens the picker; add a theme name to start on it. The current terminal appearance is listed first, with `Dark themes` and `Light themes` labels, so navigation stays within one appearance:
 
 ```text
 /themes tokyonight-dark
+```
+
+Save the selected theme for future Pi sessions without opening `/settings`:
+
+```text
+/themes set
+```
+
+Arrow through the list to preview each palette across Pi; press Enter to keep it or Escape to restore your current theme. Press `b` to toggle terminal-background previews. The preference is saved in `~/.pi/agent/pi-themes.json`; it uses OSC 11, so only terminals that support OSC 11 will change. You can also set it before opening the picker:
+
+```text
+/themes background on
+/themes background off
 ```
 
 ## Save your choice
