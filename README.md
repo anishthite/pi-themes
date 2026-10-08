@@ -1,6 +1,6 @@
 # Pi Themes
 
-**68 themes for [Pi](https://github.com/earendil-works/pi), with a built-in picker.**
+**69 themes for [Pi](https://github.com/earendil-works/pi), with a built-in picker.**
 
 ## Install
 
@@ -65,7 +65,8 @@ Each name below is available in **both** `-dark` and `-light` forms. For example
 | `solarized` | `synthwave84` | `tokyonight` |
 | `vercel` | `vesper` | `zenburn` |
 
-### Two more themes
+### Three more themes
 
+- `dark-abyss-dark`
 - `neon-city-dark`
 - `seti`
